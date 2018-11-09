@@ -55,7 +55,7 @@ body {
   border-radius: 3px;
 }
 #mainColumn {
-  padding: 8px;
+  padding: 1% 3%;
 }
 
 p {
@@ -64,5 +64,8 @@ p {
 }
 a {
   color: #9370DB;
+}
+ul {
+  padding-inline-start: 30px;
 }
 </style>
