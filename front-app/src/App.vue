@@ -1,23 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+    <header>
+      <header-component />
+    </header>
+    <div id="body">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import headerComponent from '@/components/header'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    headerComponent: headerComponent
+  }
 }
 </script>
 
 <style>
+body {
+  background-color: #E6E6FA;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: black;
+  font-size: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#body {
+  background-color: white;
+  width: 100%;
+  max-width: 1180px;
+  max-block-size: 960px;
+  margin: 0 auto;
   margin-top: 60px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+}
+
+a {
+  color: #9370DB;
 }
 </style>
