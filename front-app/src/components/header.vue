@@ -11,7 +11,7 @@ export default {
   name: 'headerComponent',
   data () {
     return {
-      title: 'Undifined'
+      title: 'to-base'
     }
   }
 }

@@ -3,24 +3,35 @@
     <header>
       <header-component />
     </header>
-    <div id="body">
-      <router-view/>
+    <div id="container">
+      <div id="mainColumn">
+        <router-view/>
+      </div>
     </div>
+    <footer>
+      <footer-component />
+    </footer>
   </div>
 </template>
 
 <script>
 import headerComponent from '@/components/header'
+import footerComponent from '@/components/footer'
 
 export default {
   name: 'app',
   components: {
-    headerComponent: headerComponent
+    headerComponent: headerComponent,
+    footerComponent: footerComponent
   }
 }
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #E6E6FA;
 }
@@ -32,10 +43,10 @@ body {
   margin: 0;
   padding: 0;
 }
-#body {
+#container {
   background-color: white;
   width: 100%;
-  max-width: 1180px;
+  max-width: 720px;
   max-block-size: 960px;
   margin: 0 auto;
   margin-top: 60px;
@@ -43,7 +54,14 @@ body {
   border: 0;
   border-radius: 3px;
 }
+#mainColumn {
+  padding: 8px;
+}
 
+p {
+  margin: 0;
+  padding: 0;
+}
 a {
   color: #9370DB;
 }
