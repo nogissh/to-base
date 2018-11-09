@@ -20,5 +20,10 @@ COPY ./docker /home/docker
 # Copy project to image
 COPY . /home/docker/app
 
+# Prepare for run django app
+WORKDIR /home/docker/app
+RUN /bin/bash -c "source ~/.bash_profile && \
+                  python manage.py collectstatic --noinput"
+
 # Expose port
 EXPOSE 80
