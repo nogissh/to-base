@@ -37,6 +37,7 @@ body {
 }
 
 #app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: black;
   font-size: 16px;
   width: 100%;
