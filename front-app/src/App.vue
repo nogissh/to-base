@@ -33,7 +33,7 @@ export default {
 }
 
 body {
-  background-color: #E6E6FA;
+  background-color: #f5f5f5;
 }
 
 #app {
@@ -53,6 +53,7 @@ body {
   padding: 0;
   border: 0;
   border-radius: 3px;
+  box-shadow: 0 2px 2px 1px lightgray;
 }
 #mainColumn {
   padding: 1% 3%;
