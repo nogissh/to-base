@@ -1,8 +1,12 @@
 <template>
   <div id="sigmusWajima">
-    <another-html
-      :afterBaseUrl="afterBaseUrl"
-    />
+    <div class="uk-container">
+      <div class="org-container">
+        <another-html
+          :afterBaseUrl="afterBaseUrl"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

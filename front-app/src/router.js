@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/pages/home'
+import profile from '@/components/pages/profile'
 import sigmusWajima from '@/components/documents/sigmus/wajima'
 
 Vue.use(Router)
@@ -16,6 +17,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: profile
     },
     {
       path: '/documents/sigmus/2018/wajima',

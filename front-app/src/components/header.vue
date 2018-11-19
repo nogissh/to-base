@@ -1,8 +1,13 @@
 <template>
   <div id="headerComponent">
-    <div id="headerTitle">
-      <h1 id="headerH1">{{ title }}</h1>
-    </div>
+    <nav class="uk-navbar" uk-navbar>
+      <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav uk-hidden-small">
+          <li class="uk-parent"><router-link to="/">Home</router-link></li>
+          <li class="uk-parent" style="margin-right: 17px;"><router-link to="/profile">Profile</router-link></li>
+        </ul>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -19,10 +24,9 @@ export default {
 
 <style>
 #headerComponent {
-  position: fixed;
+  text-align: center;
   background-color: white;
   width: 100%;
-  height: 50px;
   margin: 0;
   padding: 0;
   top: 0;
@@ -32,7 +36,7 @@ export default {
   box-sizing: border-box;
 }
 #headerTitle {
-  margin: 8px;
+  padding: 8px;
 }
 
 #headerH1 {

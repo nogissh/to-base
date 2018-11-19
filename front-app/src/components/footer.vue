@@ -1,5 +1,5 @@
 <template>
-  <div id="footerComponent">
+  <div id="footerComponent" class="uk-margin-top">
     <router-link to="/">
       <p id="footerBackToHome">ホームへ戻る</p>
     </router-link>
