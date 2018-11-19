@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
+import home from '@/components/pages/home'
 import sigmusWajima from '@/components/documents/sigmus/wajima'
 
 Vue.use(Router)

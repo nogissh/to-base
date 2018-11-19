@@ -3,11 +3,9 @@
     <header>
       <header-component />
     </header>
-    <div id="container">
-      <div id="mainColumn">
-        <router-view/>
-      </div>
-    </div>
+    <content>
+      <router-view/>
+    </content>
     <footer>
       <footer-component />
     </footer>
@@ -17,12 +15,14 @@
 <script>
 import headerComponent from '@/components/header'
 import footerComponent from '@/components/footer'
+import contentComponent from '@/components/content'
 
 export default {
   name: 'app',
   components: {
     headerComponent: headerComponent,
-    footerComponent: footerComponent
+    footerComponent: footerComponent,
+    contentComponent: contentComponent,
   }
 }
 </script>
@@ -32,7 +32,7 @@ export default {
   box-sizing: border-box;
 }
 
-body {
+html {
   background-color: #f5f5f5;
 }
 
@@ -43,21 +43,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-#container {
-  background-color: white;
-  width: 100%;
-  max-width: 720px;
-  max-block-size: 960px;
-  margin: 0 auto;
-  margin-top: 60px;
-  padding: 0;
-  border: 0;
-  border-radius: 3px;
-  box-shadow: 0 2px 2px 1px lightgray;
-}
-#mainColumn {
-  padding: 1% 3%;
 }
 
 p {
