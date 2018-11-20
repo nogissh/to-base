@@ -12,6 +12,10 @@
                 <td>大野木 俊樹, Toshiki Ohnogi</td>
               </tr>
               <tr>
+                <th>生年月日</th>
+                <td>1994年4月19日</td>
+              </tr>
+              <tr>
                 <th>所属</th>
                 <td>東京都市大学大学院環境情報学研究科2年<br />来年度より株式会社i-plugで新卒エンジニア</td>
               </tr>
@@ -34,6 +38,13 @@
             </tbody>
           </table>
         </div>
+        <div class="uk-card uk-card-default uk-card-body uk-margin-top">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="https://twitter.com/toshikiohnogi" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/toshikiohnogi" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -41,10 +52,6 @@
 
 <script>
 import Vue from 'vue'
-
-Vue.component('test', {
-  template: '<p>hahaha</p>'
-})
 
 export default {
   name: 'profile'
