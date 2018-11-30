@@ -9,7 +9,8 @@
         <div id="homeUpdate" class="uk-card uk-card-default uk-card-body uk-margin-top">
           <h2>What's New</h2>
           <ul>
-            <li><router-link to="/documents/sigmus/2018/wajima"><p>2018年11月の21日から22日にかけて行われる第121回SIGMUSポスターセッションのページをアップしました</p></router-link></li>
+            <li><router-link to="/documents/master/experiment">修士研究の実験ページをアップしました。</router-link></li>
+            <li><router-link to="/documents/sigmus/2018/wajima">2018年11月の21日から22日にかけて行われる第121回SIGMUSポスターセッションのページをアップしました</router-link></li>
           </ul>
         </div>
       </div>

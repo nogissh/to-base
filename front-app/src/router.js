@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/pages/home'
 import profile from '@/components/pages/profile'
 import sigmusWajima from '@/components/documents/sigmus/wajima'
+import masterExperiment from '@/components/documents/master/experiment'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/documents/sigmus/2018/wajima',
       name: 'sigmusWajima',
       component: sigmusWajima
+    },
+    {
+      path: '/documents/master/experiment',
+      name: 'masterExperiment',
+      component: masterExperiment
     }
   ]
 })
