@@ -2,24 +2,65 @@
 <div class="uk-card-default uk-card-body uk-margin-top">
   <div>
     <h1>評価実験のページ</h1>
-    <p>修士研究の評価実験ページです。</p>
+    <p>
+      修士研究の評価実験ページです。<br />
+      内容を熟知している場合は<a href="#mainContent">実験コンテンツ</a>へ進んでください。
+    </p>
   </div>
   <div class="uk-margin-top">
-    <h2>実験について</h2>
+    <h2>メニュー</h2>
     <ul>
-      <li>実験の説明</li>
-      <li>実験条件</li>
-      <li>設問について</li>
+      <li><a href="#experimentIntro">実験にあたって</a></li>
+      <li><a href="#experimentTerms">条件</a></li>
+      <li><a href="#experimentOrder">手順</a></li>
     </ul>
-    <p><a href="#mainContent">実験コンテンツへ</a></p>
+  </div>
+  <div>
+    <h3 id="experimentIntro">実験にあたって</h3>
+    <p>本実験は、私大野木俊樹が修士論文「DJの選曲方法に基づくプレイリスト自動生成に関する研究」で提案する手法を評価するためのものです。この度は実験にご協力いただき、深く御礼申し上げます。</p>
+    <p class="uk-margin-small-top">本実験は、提案手法の有用性を測るためのものであり、被験者の個人情報収集を目的とするものではありません。設問や感想など、評価に関する回答情報は公開されますが、氏名やメールアドレスなどの個人情報は公開されません。</p>
+  </div>
+  <div class="uk-margin-top">
+    <h3 id="experimentTerms">条件</h3>
+    <p>以下は実験条件です。熟読をお願いしています。</p>
+    <ul>
+      <li>本実験はミックスのテクニックではなく、曲の並びを評価するものです。</li>
+      <li>出力セットリストのミックスは最初に全て聴いてください。</li>
+      <li>出力セットリストを聴いたのち、入力候補セットリストを聴いてください。</li>
+      <li>各ミックスは「ながら聴き」していただいて結構です。</li>
+      <li>各ミックスは、再生地点を戻して再生していただいて結構です。ただしスキップ等で聴き漏らしがないようにしてください。</li>
+      <li>出力、入力候補ともに、DJのマイクパフォーマンスやミスは評価対象ではありません。曲順や全体的な流れが評価対象です。</li>
+    </ul>
+  </div>
+  <div>
+    <h3 id="experimentOrder">手順</h3>
+    <ol>
+      <li><a href="https://goo.gl/forms/pChNIKyOs7nbsgeH2">被験者登録</a></li>
+      <li><a href="#outSetlist">出力セットリストのミックスを聴く</a></li>
+      <li><a href="#inputSetlist">入力候補セットリストのミックスを聴く</a></li>
+      <li><a href="#answerForm">アンケートに回答する</a></li>
+    </ol>
+  </div>
+  <div>
+    <h3>コメントなど</h3>
+    <ul>
+      <li>時間を費やす実験となっています。毎日ひとつづつ消化していただければ幸いです。</li>
+      <li>各コンテンツ（YouTube, MixCloud）は膨大な通信料が発生します。Wi-Fi環境下か、オフラインで再生することを強く推奨します。</li>
+      <li>質問や効率的な進行方向などの問い合わせはなんなりと申しつけください。</li>
+    </ul>
+  </div>
+  <div>
+    <h3>連絡先</h3>
+    <p>g1783106 [at] tcu.ac.jp</p>
   </div>
 </div>
 
 <!-- コンテンツ等 -->
-<div class="uk-card-default uk-card-body uk-margin-medium-top">
+<div class="uk-card-default uk-card-body uk-margin-medium-top" id="mainContent">
   <div>
-    <h1 id="mainContent">実験</h1>
+    <h1>実験</h1>
     <ul>
+      <li><a href="#registAnswer">被験者登録</a></li>
       <li><a href="#outSetlist">出力セットリストのミックス</a></li>
       <li><a href="#inputSetlist">入力候補セットリストのミックス</a>
         <ul>
@@ -33,7 +74,13 @@
   </div>
   <hr class="uk-divider-icon">
   <div class="uk-margin-top">
+    <h2 id="registAnswer">被験者登録</h2>
+    <p><a href="https://goo.gl/forms/pChNIKyOs7nbsgeH2">こちら</a>より被験者登録をお願いします。被験者登録は一度で構いません。</p>
+  </div>
+  <hr class="uk-divider-icon">
+  <div class="uk-margin-top">
     <h2 id="outSetlist">出力セットリスト</h2>
+    <p>聴き漏れがないようにしてください。</p>
     <div class="uk-margin-top">
       <div class="videoWrapper">
         <iframe
@@ -48,6 +95,7 @@
   <hr class="uk-divider-icon">
   <div class="uk-margin-top">
     <h2 id="inputSetlist">入力候補セットリスト</h2>
+    <p>聴き漏れがないようにしてください。</p>
     <div class="uk-margin-top">
       <h3 class="uk-margin-remove-bottom" id="inputSetlist_1">セットリスト 1</h3>
       <p>Ultra Miami 2016, Armin van Buuren</p>
@@ -78,24 +126,32 @@
       <h3 class="uk-margin-remove-bottom" id="inputSetlist_3">セットリスト 3</h3>
       <p>SLAM! Mix Marathon 2016, Armin van Buuren</p>
       <p><a href="https://1001.tl/2mxxzuxk" target="_blank">セットリストを見る</a></p>
-      <div class="videoWrapper">
-        <iframe
-          src="https://www.youtube.com/embed/5pV-H6tSEwM"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <iframe
+        width="100%"
+        height="120"
+        src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fwilliam-gullberg%2Farmin-van-buuren-mix-marathon-ade-special-slamfm-19-oct-2016%2F"
+        frameborder="0" >
+      </iframe>
     </div>
   </div>
   <hr class="uk-divider-icon">
   <div class="uk-margin-top">
     <h2 id="answerForm">回答フォーム</h2>
+    <p><a href="https://goo.gl/forms/1oSlToMDbK0KG1aE3">回答フォーム</a>から回答します。</p>
   </div>
+</div>
+
+<!-- さいごに -->
+<div class="uk-card-default uk-card-body uk-margin-medium-top">
+  <h1>BIG THANKS!!</h1>
+  <p>ご協力いただきありがとうございました。</p>
 </div>
 
 <!-- スタイル -->
 <style>
+h4 {
+  font-size: 18px;
+}
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
