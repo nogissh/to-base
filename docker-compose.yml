@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  back-app:
-    container_name: mypage_back-app
-    build: ./back-app
+  app:
+    container_name: mypage_app
+    build: ./app
     working_dir: /home/docker/app
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
