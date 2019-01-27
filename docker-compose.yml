@@ -1,8 +1,6 @@
 version: '3'
 
-
 services:
-
   back-app:
     container_name: mypage_back-app
     build: ./back-app
@@ -14,27 +12,8 @@ services:
     expose:
       - 80
     environment:
-      - VIRTUAL_HOST=api.toshikiohnogi.net
-      - LETSENCRYPT_HOST=api.toshikiohnogi.net
-
-  front-app:
-    container_name: mypage_front-app
-    build: ./front-app
-    working_dir: /home/docker/app
-    command: >
-      /bin/sh -c "nginx"
-    expose:
-      - 80
-    environment:
       - VIRTUAL_HOST=www.toshikiohnogi.net
       - LETSENCRYPT_HOST=www.toshikiohnogi.net
-    tty: true
-    depends_on:
-      - vue-webapp-base
-
-  vue-webapp-base:
-    build: "./docker/base/vue"
-
 
 networks:
   default:
