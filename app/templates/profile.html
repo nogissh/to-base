@@ -1,43 +1,15 @@
 {% extends 'components/base.html' %}
 
 {% block content %}
-<div class="uk-width-2-3 uk-align-center">
-  <div class="uk-card uk-card-default uk-card-body uk-margin-top">
+<div class="uk-width-2-3@s uk-align-center">
+  <div class="uk-card uk-card-default uk-card-body uk-margin-top uk-margin-bottom">
     <p class="uk-text-lead">Profile</p>
-    <table class="uk-table uk-width-expand uk-text-center">
-      <caption></caption>
-      <thead></thead>
-      <tbody>
-        <tr>
-          <th>Name</th>
-          <td>Toshiki Ohnogi (大野木俊樹)</td>
-        </tr>
-        <tr>
-          <th>Born</th>
-          <td>Apr 19, 1994, Yokohama</td>
-        </tr>
-        <tr>
-          <th>Belonging</th>
-          <td>Tokyo City University, Master cource of EIS.</td>
-        </tr>
-        <tr>
-          <th>Title of master's paper</th>
-          <td>DJの選曲方法に基づくプレイリスト生成に関する研究</td>
-        </tr>
-        <tr>
-          <th>Programming L.</th>
-          <td>Python, Nim, JavaScript</td>
-        </tr>
-        <tr>
-          <th>Tools</th>
-          <td>Django, Vue, Docker</td>
-        </tr>
-        <tr>
-          <th>Hobby</th>
-          <td>DJ, Horse Racing, Programming, Society</td>
-        </tr>
-      </tbody>
-    </table>
+    {% for p in profile %}
+    <div uk-grid>
+      <div class="uk-width-1-4@s uk-text-center@s uk-text-bold">{{ p.title }}</div>
+      <div class="uk-width-3-4@s uk-text-center@s">{{ p.content }}</div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
