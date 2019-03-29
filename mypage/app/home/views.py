@@ -5,10 +5,7 @@ def Root(request):
   return redirect('/home/')
 
 def Home(request):
-  return render(request, 'home.html')
-
-def Profile(request):
   content = {
     'profile': profile
   }
-  return render(request, 'profile.html', content)
+  return render(request, 'home.html', content)
