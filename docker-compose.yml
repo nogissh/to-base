@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mypage:
+    container_name: mypage
+    build: .
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=www.toshikiohnogi.net
+      - LETSENCRYPT_HOST=www.toshikiohnogi.net
+
+networks:
+  default:
+    external:
+      name: webproxy
