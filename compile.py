@@ -1,7 +1,13 @@
 import os
+import shutil
 from jinja2 import Environment, FileSystemLoader
 from csscompressor import compress
 from htmlmin import minify
+
+try:
+  shutil.rmtree('./public')
+except FileNotFoundError:
+  print('No `./public` directory.')
 
 PROFILE = [
   {
