@@ -4,37 +4,13 @@ from jinja2 import Environment, FileSystemLoader
 from csscompressor import compress
 from htmlmin import minify
 
+from configs.profile import PROFILE as PROFILE_CONFIG
+from configs.head import TEXT as TEXT_CONFIG
+
 try:
   shutil.rmtree('./public')
 except FileNotFoundError:
   print('No `./public` directory.')
-
-PROFILE = [
-  {
-    'title': 'Name',
-    'content': 'Toshiki Ohnogi'
-  },
-  {
-    'title': 'Born',
-    'content': 'Apr 19, 1994, Yokohama, Japan'
-  },
-  {
-    'title': 'Title of Research',
-    'content': 'DJの選曲方法に基づくプレイリスト生成に関する研究'
-  },
-  {
-    'title': 'Programming Languages',
-    'content': 'Python, Nim, JavaScript'
-  },
-  {
-    'title': 'Tools',
-    'content': 'Django, Vue, Docker'
-  },
-  {
-    'title': 'Hobbies',
-    'content': 'DJ, Horse Racing, Programming, Society'
-  }
-]
 
 with open('static/css/style.css') as f:
   raw_css = f.read()
@@ -44,8 +20,9 @@ env = Environment(loader=FileSystemLoader('./templates'))
 
 template = env.get_template('containers/home.html')
 html = template.render({
-  'css'    : css,
-  'profile': PROFILE
+  'css'       : css,
+  'profile'   : PROFILE_CONFIG,
+  'head_text' : TEXT_CONFIG
 })
 
 os.system('mkdir public')
