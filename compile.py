@@ -5,7 +5,8 @@ from csscompressor import compress
 from htmlmin import minify
 
 from configs.profile import PROFILE as PROFILE_CONFIG
-from configs.head import TEXT as TEXT_CONFIG
+from configs.head import TEXT as HEAD_TEXT
+from configs.note import TEXT as NOTE_TEXT
 
 try:
   shutil.rmtree('./public')
@@ -22,10 +23,13 @@ template = env.get_template('containers/home.html')
 html = template.render({
   'css'       : css,
   'profile'   : PROFILE_CONFIG,
-  'head_text' : TEXT_CONFIG
+  'head_text' : HEAD_TEXT,
+  'note_text' : NOTE_TEXT
 })
 
 os.system('mkdir public')
 os.system('cp -a static public/static')
 with open('public/index.html', 'w', encoding='utf-8') as f:
-  f.write(minify(html))
+  html = minify(html)
+  html = html.replace('> <', '><')
+  f.write(html)

@@ -1,27 +1,27 @@
 PROFILE = [
   {
     'title': 'Name',
-    'content': '大野木 俊樹, Toshiki Ohnogi'
+    'content': '大野木 俊樹 (Toshiki Ohnogi)'
   },
   {
     'title': 'Born',
-    'content': 'Apr 19, 1994; Yokohama, Japan'
-  },
-  {
-    'title': 'Title of Research',
-    'content': 'DJの選曲方法に基づくプレイリスト生成に関する研究'
+    'content': 'Apr, 1994'
   },
   {
     'title': 'Programming Languages',
-    'content': 'Python, Nim, JavaScript, PHP'
+    'content': 'Python, Nim'
   },
   {
     'title': 'Tools',
-    'content': 'Django, Laravel, Vue, React, Docker'
+    'content': 'Django, Vue, React'
   },
   {
-    'title': 'Hobbies',
-    'content': 'DJ, Horse Racing, Programming, Society'
+    'title': 'Favorites',
+    'content': 'Horse Racing, DJ'
+  },
+  {
+    'title': 'Research',
+    'content': 'Music Selection, Playlist Generation'
   },
   {
     'title': 'Working',

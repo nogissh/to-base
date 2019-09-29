@@ -7,24 +7,32 @@
         </div>
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav uk-visible@s">
-            <li><a href="https://twitter.com/toshikiohnogi" target="_blank" style="color: white;">Twitter</a></li>
-            <li><a href="https://github.com/toshikiohnogi" target="_blank" style="color: white;">GitHub</a></li>
+            <li>
+              <a href="https://twitter.com/toshikiohnogi" target="_blank" style="color: white;">
+                <span class="uk-margin-small-right" uk-icon="twitter"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/toshikiohnogi" target="_blank" style="color: white;">
+                <span class="uk-margin-small-right" uk-icon="github"></span>
+              </a>
+            </li>
           </ul>
           <div class="uk-hidden@s">
             <a class="uk-navbar-toggle" href="#offcanvas" uk-navbar-toggle-icon uk-toggle></a>
-            <div id="offcanvas" uk-offcanvas="overlay: true">
-              <div class="uk-offcanvas-bar">
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <ul class="uk-nav uk-nav-default">
-                  <li class="uk-nav-header">Menu</li>
-                  <li><a href="https://twitter.com/toshikiohnogi" target="_blank">Twitter</a></li>
-                  <li><a href="https://github.com/toshikiohnogi" target="_blank">GitHub</a></li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </nav>
+    </div>
+  </div>
+  <div id="offcanvas" uk-offcanvas="overlay: true; flip: true; mode: push">
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-default">
+        <li class="uk-nav-header">Menu</li>
+        <li><a href="https://twitter.com/toshikiohnogi" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/toshikiohnogi" target="_blank">GitHub</a></li>
+      </ul>
     </div>
   </div>
 </header>
