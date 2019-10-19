@@ -2,7 +2,8 @@
 FROM python:3.7-alpine as build-stage
 WORKDIR /app
 COPY requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 COPY . .
 RUN python compile.py
 

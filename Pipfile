@@ -6,6 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+csscompressor = "==0.9.5"
+htmlmin = "==0.1.12"
+Jinja2 = "==2.10.1"
+MarkupSafe = "==1.1.1"
+jsmin = "*"
 
 [requires]
 python_version = "3.7"
