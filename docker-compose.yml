@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  mypage:
-    container_name: mypage
+  to-base:
+    container_name: to-base
     build: .
     expose:
       - 80
