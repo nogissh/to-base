@@ -10,6 +10,30 @@ from configs import compile_container
 from configs.home import home_config_instance
 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def get_css_filepath(filename, BASE_DIR=BASE_DIR):
+  return f'{BASE_DIR}/static/css/{filename}'
+
+
+def get_js_filepath(filename, BASE_DIR=BASE_DIR):
+  return f'{BASE_DIR}/static/js/{filename}'
+
+
+def get_route_path(want_url=None, BASE_DIR=BASE_DIR):
+  f = lambda path: f'{BASE_DIR}/public/{path}.html'
+
+  if want_url is None:
+    return f('index')
+  
+  dir_file = want_url.split('/')
+  if len(dir_file) > 1 and dir_file[-1] == '':
+    return f(want_url + 'index')
+
+  return f(want_url)
+
+
 class BaseCssCompiler:
   def __init__(self, file_path):
     self._file_path = file_path
@@ -163,21 +187,41 @@ class BaseHtmlCssCompiler(BaseHtmlCompiler):
     )
 
 
-class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler):
+class BaseHtmlJsCompiler(BaseHtmlCompiler):
+  def __init__(self, multi_js_compiler, environment):
+    self.multi_js_compiler = multi_js_compiler
+    self._env = environment
+
+  def set_multi_js_compiler(self, multi_js_compiler):
+    self.multi_js_compiler = multi_js_compiler
+
+  def get_minified_js(self):
+    return self.multi_js_compiler.stick()
+
+  def combine_params_js(self, params, js):
+    params['js'] = js
+    return params
+
+  def rendering(self):
+    template = self.get_template()
+
+    return template.render(
+      self.combine_params_js(
+        self.get_params(),
+        self.get_minified_js()
+      )
+    )
+
+
+class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler, BaseHtmlJsCompiler):
   def __init__(self, multi_css_compiler, multi_js_compiler, environment):
     self.multi_css_compiler = multi_css_compiler
     self.multi_js_compiler  = multi_js_compiler
     self._env = environment
 
-  def set_js_compiler(self, multi_js_compiler):
-    self.multi_js_compiler = multi_js_compiler
-
-  def get_minified_multi_js(self):
-    return self.multi_js_compiler.stick()
-
   def combine_params_css_js(self, params, css, js):
     params = self.combine_params_css(params, css)
-    params['js'] = js
+    params = self.combine_params_js(params, js)
     return params
 
   def rendering(self):
@@ -187,7 +231,7 @@ class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler):
       self.combine_params_css_js(
         self.get_params(),
         self.get_minified_css(),
-        self.get_minified_multi_js()
+        self.get_minified_js()
       )
     )
 
@@ -232,19 +276,23 @@ os.mkdir('public')
 os.system('cp -a static public/static')
 
 html_compiler = HtmlCompiler.factory(
-  MultiCssCompiler([StyleCssCompiler('static/css/style.css')]),
-  MultiJavaScriptCompiler([GoogleAnalyticsCompiler('static/js/google_analytics.js')]),
+  MultiCssCompiler([
+    StyleCssCompiler(get_css_filepath('style.css'))
+  ]),
+  MultiJavaScriptCompiler([
+    GoogleAnalyticsCompiler(get_js_filepath('google_analytics.js'))
+  ]),
   Environment(loader=FileSystemLoader('./templates'))
 )
 
 html_compiler.compile(
   compile_container.get_home_path(),
-  'public/index.html',
+  get_route_path(),
   home_config_instance.get_params_as_dict()
 )
 
 os.mkdir('public/events')
 html_compiler.compile(
   compile_container.get_tcu_workshop_oct_2019(),
-  'public/events/tcu_workshop_oct_2019.html'
+  get_route_path('events/tcu_workshop_oct_2019')
 )
