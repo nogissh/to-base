@@ -290,9 +290,3 @@ html_compiler.compile(
   get_route_path(),
   home_config_instance.get_params_as_dict()
 )
-
-os.mkdir('public/events')
-html_compiler.compile(
-  compile_container.get_tcu_workshop_oct_2019(),
-  get_route_path('events/tcu_workshop_oct_2019')
-)
