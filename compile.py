@@ -163,21 +163,41 @@ class BaseHtmlCssCompiler(BaseHtmlCompiler):
     )
 
 
-class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler):
+class BaseHtmlJsCompiler(BaseHtmlCompiler):
+  def __init__(self, multi_js_compiler, environment):
+    self.multi_js_compiler = multi_js_compiler
+    self._env = environment
+
+  def set_multi_js_compiler(self, multi_js_compiler):
+    self.multi_js_compiler = multi_js_compiler
+
+  def get_minified_js(self):
+    return self.multi_js_compiler.stick()
+
+  def combine_params_js(self, params, js):
+    params['js'] = js
+    return params
+
+  def rendering(self):
+    template = self.get_template()
+
+    return template.render(
+      self.combine_params_js(
+        self.get_params(),
+        self.get_minified_js()
+      )
+    )
+
+
+class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler, BaseHtmlJsCompiler):
   def __init__(self, multi_css_compiler, multi_js_compiler, environment):
     self.multi_css_compiler = multi_css_compiler
     self.multi_js_compiler  = multi_js_compiler
     self._env = environment
 
-  def set_js_compiler(self, multi_js_compiler):
-    self.multi_js_compiler = multi_js_compiler
-
-  def get_minified_multi_js(self):
-    return self.multi_js_compiler.stick()
-
   def combine_params_css_js(self, params, css, js):
     params = self.combine_params_css(params, css)
-    params['js'] = js
+    params = self.combine_params_js(params, js)
     return params
 
   def rendering(self):
@@ -187,7 +207,7 @@ class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler):
       self.combine_params_css_js(
         self.get_params(),
         self.get_minified_css(),
-        self.get_minified_multi_js()
+        self.get_minified_js()
       )
     )
 
