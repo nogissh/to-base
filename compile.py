@@ -236,6 +236,21 @@ class BaseHtmlCssMultijsCompiler(BaseHtmlCssCompiler, BaseHtmlJsCompiler):
     )
 
 
+class HtmlCompiler(BaseHtmlCssMultijsCompiler):
+  @classmethod
+  def factory(
+    cls,
+    css_compiler_instance,
+    js_compiler_instance,
+    environment
+  ):
+    return cls(
+      css_compiler_instance,
+      js_compiler_instance,
+      environment
+    )
+
+
 class StyleCssCompiler(BaseCssCompiler):
   pass
 
@@ -252,25 +267,10 @@ class MultiJavaScriptCompiler(BaseMultiJavaScriptCompiler):
   pass
 
 
-class HtmlCompiler(BaseHtmlCssMultijsCompiler):
-  @classmethod
-  def factory(
-    cls,
-    css_compiler_instance,
-    js_compiler_instance,
-    environment
-  ):
-    return cls(
-      css_compiler_instance,
-      js_compiler_instance,
-      environment
-    )
-
-
 try:
   shutil.rmtree('./public')
 except FileNotFoundError:
-  print('No `./public` directory.')
+  pass
 
 os.mkdir('public')
 os.system('cp -a static public/static')
