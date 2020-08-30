@@ -13,3 +13,16 @@ p {
   margin: 0;
   padding: 0;
 }
+.my-youtube {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.my-youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
