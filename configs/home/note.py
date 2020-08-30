@@ -1,2 +1,0 @@
-TEXT = "".replace('\n', '<br />')
-
